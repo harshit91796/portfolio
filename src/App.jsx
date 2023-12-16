@@ -9,7 +9,8 @@ import Experience from "./components/section/Experience";
 import Skills from "./components/section/Skills";
 import Achievment from "./components/section/Achievment";
 import Home from "./components/section/Home";
-import MyPic from "./components/myPic";
+import MyPic from "./components/MyPic";
+
 
 function App() {
   return (
