@@ -1,9 +1,8 @@
 import React from "react";
 import Header from "./components/Header";
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import { Sidebar } from "./components/Sidebar";
 import "./App.css"
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import MiddleBlock from "./components/MiddleBlock";
 import AboutMe from "./components/section/AboutMe";
 import Experience from "./components/section/Experience";
