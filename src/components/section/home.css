@@ -1,0 +1,115 @@
+.homeContainer{
+    height: 100vh;
+}
+
+.homeFirst{
+    /* background-color: aqua; */
+    
+    height: 25vh;
+    position: relative;
+}
+
+.homeSecond{
+    /* background-color: aquamarine; */
+    background-color:#1f1e1f;
+    display: flex;
+    height: 65vh;
+}
+
+.secondLeft{
+    /* background-color: antiquewhite; */
+    flex: 5;
+}
+
+.secontRight{
+    /* background-color: blueviolet; */
+    flex: 5;
+}
+
+.homeName{
+    position: absolute;
+    /* text-align: center; */
+    color: #CCCCCC;
+    top: 50px;
+    left: 210px;
+    
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, sans-serif, 'Droid Sans Fallback';
+   
+}
+.homeName h1{
+   font-weight: 500;
+   margin-bottom: 10px;
+}
+
+.end{
+    
+    color: #CCCCCC;
+    font-size: 20px;
+    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, sans-serif, 'Droid Sans Fallback';
+}
+
+.secondStart{
+    padding: 10px;
+    color: #0079D8;
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    gap: 10px;
+    font-size: 15px;
+    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, sans-serif, 'Droid Sans Fallback';
+    
+}
+
+.start{
+    color: #CCCCCC;
+    font-size: 20px;
+    font-weight: 350;
+
+}
+.download{
+    align-items: center;
+    display: flex;
+}
+.down{
+    /* text-align: center; */
+    /* margin-top: 5px; */
+    margin-right: 2px;
+}
+
+
+h2{
+      
+    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, sans-serif, 'Droid Sans Fallback';
+}
+
+.imgContainer{
+    background-color: aliceblue;
+    width: 100%;
+    height: 60%;
+}
+.imgContainer img{
+    width: 100%;
+    height: 100%;
+}
+
+.secondRight{
+    
+    gap: 10px;
+    display: flex;
+    margin-right: 300px;
+    flex-direction: column;
+
+}
+
+.links{
+    display: flex;
+    gap: 10px;
+}
+
+.li{
+    text-decoration: none;
+    color: inherit;
+    
+}

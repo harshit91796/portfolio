@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-me-container {
+  font: 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+  color: rgb(188, 188, 188);
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 2px;
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+}
+
+
+/* Add this CSS to your stylesheets */
+.line-numbered-text {
+  display: flex;
+}
+
+.line {
+  font-family: 'Courier New', monospace;
+  padding: 0.5em;
+  white-space: pre-wrap;
+}
+
+.line-number {
+  color: #888;
+  margin-right: 0.5em;
+}
+
+
+body{
+    background-color: #1f1e1f;
+    
+}
+.about{
+    height: 90vh;
+    overflow-y:scroll;
+    font : 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+}
+.about h1{
+    color: #6A9955;
+}
+
+.about p{
+    color: #CCCCCC;
+    padding: 10px;
+    font-size: 30px;
+    height: 100%;
+    /* overflow-y:scroll; */
+}
+
+.t{
+    height: 100vh;
+    overflow: hidden;
+}
+.header1{
+    width : 100vw;
+
+
+}
+.miniSide{
+    height: 93.80vh;
+    margin-top: -5px;
+
+}
+.footer{
+    width: 100vw;
+    margin-top: -15px;
+}
+
+.middleContainer{
+    border-top: solid px  #626161ed;
+    border-bottom: solid 2px  #626161ed;
+    width: 100vw;
+    background-color: #181718;
+    height: 50px;
+   
+}
+
+.nav{
+    /* background-color: wheat; */
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.terminal{
+    background-color: #181718;
+    height: 28.5vh;
+    position: relative;
+    
+}
+.terminalImgContainer {
+    position: relative;
+    width: 100%;
+    height: 26%;
+    overflow: hidden;
+    
+  }
+  
+  .ter1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: -10px; 
+    /* object-position: 100% 500%; */
+  }
+
+  .terminalInputContainer{
+    display: flex;
+    gap: 10px;
+    background-color: #181718;
+    /* height: 72%; */
+  }
+  .terminalText{
+    color: #cccccce6;
+    margin-left : 18px;
+    font : 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+    
+  }
+  
+  .cursor {
+    position: absolute;
+  border-Bottom: 1px solid white; /* Adjust the margin to separate the cursor from the text */
+  }
+  
+  input {
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, sans-serif, 'Droid Sans Fallback';
+    font-size: 14px;
+    outline: none;
+    /* height: 18px; */
+  }
+
+  .terminalOutputContainer{
+    color: #cccccce6;
+    margin-left : 18px;
+    font : 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+  }
+
+  .npm {
+    color: #FFD700; /* Yellow color for npm */
+    margin-right: 4px; /* Adjust the margin to separate npm from the cursor */
+  }
+
+
+  /* Scrollbar Track */
+::-webkit-scrollbar {
+    width: 10px; /* Adjust the width of the scrollbar */
+  }
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #abb2bf7b; /* Color of the scrollbar handle */
+    border-radius: 5px; /* Rounded corners for the handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8289976d; /* Color of the scrollbar handle on hover */
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    width: 10px;
+    background-color:#353537; /* Background color of the scrollbar track */
+  }
+  
+  /* Corner */
+  .terminalImgContainer::-webkit-scrollbar-corner {
+    background-color: #F8F8F8; /* Background color of the scrollbar corner */
+  }
+  
+  
+
+
+.Ex{
+    background-color: #181718;
+    width: 14vw;
+    border-right: solid 1px  #626161ed;
+    border-left: solid 1px #626161ed;
+}
+.Ex span{
+    font : 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+    padding: 22px;
+    color: rgb(188, 188, 188);
+}
+.box{
+    background-color: #1f1e1f;
+    height: 60vh;
+    overflow-Y: 'auto',
+}
+
+.middleBlock{
+    display: flex;
+}
+
+.aboutMe{
+    font : 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+    color: rgb(188, 188, 188);
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 2px;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+.aboutMe2{
+    font : 400 14px "Segoe WPC","Segoe UI",SFUIText-Light,HelveticaNeue-Light,sans-serif,"Droid Sans Fallback";
+    color: rgb(188, 188, 188);
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 2px;
+    width: 200px;
+    display: inline-block;
+    text-decoration: none;
+    border-right: solid 1px  #626161ed;
+    border-left: solid 0.1px #626161ed;
+    
+}
+.aboutMe2:hover{
+    background-color: #353537;
+
+    
+}
+
+.aboutMe:hover{
+    background-color: #353537;
+
+    
+}
+
+/* projects */
+.p1{
+    /* background-color:#181718; */
+    height: 90vh;
+    overflow-y:scroll;
+}
+
+.projectContainerCard{
+    background-color: aliceblue;
+    width: 480px;
+    height: 300px;
+    box-shadow: 20px 20px 50px rgba(0, 0,0,0.5);
+    margin: 50px;
+    background: rgba(255,255,255,0.1);
+    overflow: hidden;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+}
+
+.tilt{
+    background: rgba(255,255,255,0.1);
+    width: 500px;
+}
+
+.projectContainerCard {
+    transition: box-shadow 1.2s ease;
+  }
+  
+  .projectContainerCard:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Adjust the color and intensity as needed */
+  }
+
+.projectContainer h1{
+   color: #6A9955;
+}
+
+.projectContainer h2{
+    color: #CCCCCC;
+    margin-left: 10px;
+
+ }
+
+ .projectContainer{
+  padding: 10px;
+
+ }
+
+.skillImg{
+  display: flex;
+  gap: 10px;
+  margin: 30px;
+  
+}
+/* .skillImg {
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.skillImg.animate {
+  opacity: 1;
+  transform: translateX(0);
+} */
+.skill{
+  /* background-color: #6A9955; */
+  width: 200px;
+  height: 100px;
+}
+
+.skill img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.projectContainer h2{
+  margin: 30px;
+}
+
+
+.func{
+  /* background-color: #626161ed; */
+  height: 300px;
+  width: 300px;
+}
