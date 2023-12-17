@@ -4,6 +4,7 @@ import { Sidebar } from '../Sidebar'
 import Explorer from '../Explorer'
 import { ArrowDownward, DynamicFeed, FileOpen, FileOpenOutlined, GitHub, Instagram, LinkedIn, Male, Terminal } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
+import {css,js,f,node,react,vac,mon,my,i,socket,W} from '../../assets/index'
 function Home() {
   const handleDownloadResume = () => {
     // Replace 'your_resume.pdf' with the actual file name of your resume
@@ -54,7 +55,7 @@ function Home() {
           <div className="secondRight">
           <span className='end'>Walk through </span>
              <div className="imgContainer">
-             <img className = "header1" src='public\image\W.jpg'></img>
+             <img className = "header1" src={W}></img>
              </div>
           </div>
        </div>

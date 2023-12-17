@@ -8,5 +8,6 @@ import mon from './mon.png'
 import my from './my.jpeg'
 import i from './i.png'
 import socket from './socket.png'
-
-export {css,js,f,node,react,vac,mon,my,i,socket} 
+import W from './W.jpg'
+import book from './book.jpg'
+export {css,js,f,node,react,vac,mon,my,i,socket,W,book} 

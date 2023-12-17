@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import Tilt from 'react-vanilla-tilt';
-import {css,js,f,node,react,vac,mon,my,i,socket} from '../../assets/index'
+import {css,js,f,node,react,vac,mon,my,i,socket,book} from '../../assets/index'
 
 
 function Achievement() {
@@ -191,7 +191,7 @@ function Achievement() {
           <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
             <img
               style={{ objectFit: "fill", width: "100%", height: "400px" }}
-              src="public\book.jpg"
+              src={book}
               alt=""
             />
           </div>
