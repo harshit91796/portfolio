@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import Tilt from 'react-vanilla-tilt';
+import {css,js,f,node,react,vac,mon,my,i,socket} from '../../assets/index'
+
 
 function Achievement() {
   const [isHovered, setIsHovered] = useState(false);
@@ -30,7 +32,7 @@ function Achievement() {
                 autoPlay
                 loop
                 muted
-                src={"../../../public/social.mp4"}
+                src={'https://bci-images.s3.ap-south-1.amazonaws.com/team/1702813960885_social.mp4'}
                 width={500}
               />
             ) : (
@@ -39,7 +41,7 @@ function Achievement() {
                   autoPlay
                   loop
                   muted
-                  src={"../../../public/social.mp4"}
+                  src={"https://bci-images.s3.ap-south-1.amazonaws.com/team/1702813960885_social.mp4"}
                   width={500}
                 />
               </div>
@@ -48,19 +50,19 @@ function Achievement() {
         </Tilt>
         <div className="skillImg">
           <div className="skill">
-            <img src="public\icons8-react-js-500.png" alt="" />
+            <img src={react} alt="" />
           </div>
           <div className="skill">
-            <img src="public\icons8-nodejs-240.png" alt="" />
+            <img src={node} alt="" />
           </div>
           <div className="skill">
             <img
-              src="public\icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png"
+              src={mon}
               alt=""
             />
           </div>
           <div className="skill">
-            <img src="public\socket_io_logo_icon_144874.png" alt="" />
+            <img src={socket} alt="" />
           </div>
           <div className="skill">
             <img src="public\icons8-js-256.png" alt="" />
@@ -114,16 +116,16 @@ function Achievement() {
         </Tilt>
         <div className="skillImg">
           <div className="skill">
-            <img src="public\icons8-react-js-500.png" alt="" />
+            <img src={react} alt="" />
           </div>
           <div className="skill">
-            <img src="public\icons8-nodejs-240.png" alt="" />
+            <img src={node} alt="" />
           </div>
           <div className="skill">
-            <img src="public\icons8-js-256.png" alt="" />
+            <img src={js} alt="" />
           </div>
           <div className="skill">
-            <img src="public\icons8-css-200.png" alt="" />
+            <img src={css} alt="" />
           </div>
         </div>
         <h2>
@@ -145,21 +147,21 @@ function Achievement() {
           <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
             <img
               style={{ objectFit: "fill", width: "100%", height: "300px" }}
-              src="public\vac.jpg"
+              src={vac}
               alt=""
             />
           </div>
         </Tilt>
       <div className="skillImg">
       <div className="skill">
-      <img src="public\icons8-nodejs-240.png" alt="" />
+      <img src={node} alt="" />
     </div>
     <div className="skill">
-      <img src="public\icons8-js-256.png" alt="" />
+      <img src={mon} alt="" />
     </div>
     <div className="skill">
             <img
-              src="public\icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png"
+              src={js}
               alt=""
             />
           </div>
@@ -196,14 +198,14 @@ function Achievement() {
         </Tilt>
       <div className="skillImg">
       <div className="skill">
-      <img src="public\icons8-nodejs-240.png" alt="" />
+      <img src={node} alt="" />
     </div>
     <div className="skill">
-      <img src="public\icons8-js-256.png" alt="" />
+      <img src={js} alt="" />
     </div>
     <div className="skill">
             <img
-              src="public\icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png"
+              src={mon}
               alt=""
             />
           </div>
@@ -251,7 +253,7 @@ function Achievement() {
         </Tilt>
       <div className="skillImg">
     <div className="skill">
-      <img src="public\icons8-js-256.png" alt="" />
+      <img src={js} alt="" />
     </div>    
       </div>
         <h2>
@@ -277,14 +279,14 @@ function Achievement() {
       </Tilt>
     <div className="skillImg">
     <div className="skill">
-    <img src="public\icons8-nodejs-240.png" alt="" />
+    <img src={node} alt="" />
   </div>
   <div className="skill">
-    <img src="public\icons8-js-256.png" alt="" />
+    <img src={js} alt="" />
   </div>
   <div className="skill">
           <img
-            src="public\icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png"
+            src={mon}
             alt=""
           />
         </div>
