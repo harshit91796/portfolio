@@ -54,7 +54,7 @@ function Home() {
           <div className="secondRight">
           <span className='end'>Walk through </span>
              <div className="imgContainer">
-             <img className = "header1" src='image\w.jpg'></img>
+             <img className = "header1" src='public\image\W.jpg'></img>
              </div>
           </div>
        </div>
