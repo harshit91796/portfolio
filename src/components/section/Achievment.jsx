@@ -1,11 +1,43 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../../App.css';
 import Tilt from 'react-vanilla-tilt';
 import {css,js,f,node,react,vac,mon,my,i,socket,book} from '../../assets/index'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 
 function Achievement() {
   const [isHovered, setIsHovered] = useState(false);
+  const arr = [react,node,mon,socket,js,css]
+  const arr2 = [react,node,mon,js,css]
+  
+  const introImgRefs = Array.from({ length: 6 }, () => useRef());
+
+  useEffect(() => {
+    introImgRefs.forEach((ref, index) => {
+      gsap.fromTo(
+        ref.current,
+        {
+          filter: 'blur(10px)',
+          x: '100%',
+        },
+        {
+          duration: 3.5,
+          ease: 'circ.out',
+          x: 0,
+          filter: 'blur(0px)',
+          scrollTrigger: {
+            trigger: ref.current,
+            scrub: 1,
+            start: 'top 80%',
+            end: 'center center',
+            // stagger: 2.5,
+          },
+        }
+      );
+    });
+  }, [introImgRefs]);
+
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -49,27 +81,12 @@ function Achievement() {
           </div>
         </Tilt>
         <div className="skillImg">
-          <div className="skill">
-            <img src={react} alt="" />
+        {arr.map((tag, index) => (
+          <div className="skill" ref={introImgRefs[index]} key={index}>
+            <img src={tag} alt="" />
           </div>
-          <div className="skill">
-            <img src={node} alt="" />
-          </div>
-          <div className="skill">
-            <img
-              src={mon}
-              alt=""
-            />
-          </div>
-          <div className="skill">
-            <img src={socket} alt="" />
-          </div>
-          <div className="skill">
-            <img src="public\icons8-js-256.png" alt="" />
-          </div>
-          <div className="skill">
-            <img src="public\icons8-css-200.png" alt="" />
-          </div>
+        ))}
+        
         </div>
         <h2>
           Developed a full-stack social media platform using MERN (MongoDB,
@@ -115,18 +132,11 @@ function Achievement() {
           </div>
         </Tilt>
         <div className="skillImg">
-          <div className="skill">
-            <img src={react} alt="" />
+        {arr2.map((tag, index) => (
+          <div className="skill" ref={introImgRefs[index]} key={index}>
+            <img src={tag} alt="" />
           </div>
-          <div className="skill">
-            <img src={node} alt="" />
-          </div>
-          <div className="skill">
-            <img src={js} alt="" />
-          </div>
-          <div className="skill">
-            <img src={css} alt="" />
-          </div>
+        ))}
         </div>
         <h2>
           The "Video to Transcript Converter" is a personal project that I
