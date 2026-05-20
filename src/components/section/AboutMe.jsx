@@ -1,26 +1,56 @@
 import React from 'react'
-import MiddleBox from '../MiddleBlock'
-import MiddleBlock from '../MiddleBlock'
+import { CodeBlock, Line } from '../CodeBlock'
 
-function AboutMe({abcd}) {
+const Cmt = ({ children }) => <span className="tok-cmt">{children}</span>
+const Doc = ({ children }) => <span className="tok-doc">{children}</span>
+const Tag = ({ children }) => <span className="tok-tag">{children}</span>
+
+function AboutMe() {
   return (
-    <div className='about'>
-   
-      <h1>//Harshit rajput</h1>
-
-      <p>About Me
-
-      Hello, I'm Harshit Rajput, a passionate and results-driven Full Stack Developer based in Bhopal, Madhya Pradesh. With a background in computer science and a graduation year of 2020, my journey into the world of technology has been both unconventional and rewarding.
-      
-      I started by venturing into the entrepreneurial realm, establishing and managing my own school catering to students from KG1 to 9. This experience not only honed my business acumen but also fueled my interest in graphic design, a skill I've cultivated over the years.
-      
-      The turning point came when I discovered web development during my exploration of graphic design. Intrigued by its creative aspects, I dedicated the past 8 months to mastering various technologies. This journey led me to Function Up, where I delved into the MERN stack, MySQL, Git, Docker, React.js, Next.js, and Material-UI.
-      
-      I thrive on challenges and am deeply committed to continuous learning. My unique blend of business experience, creative design background, and newfound expertise in web development positions me as a well-rounded professional. I'm now eager to apply my skills and passion to contribute to the ever-evolving field of IT.
-      
-      Thank you for visiting my portfolio, and I look forward to exploring how I can bring value to your projects.</p>
-   
-    </div>
+    <CodeBlock filename="aboutMe.txt" language="markdown">
+      <Line><Cmt>/**</Cmt></Line>
+      <Line><Cmt>{' * '}</Cmt><Tag>@file</Tag><Doc>{'   aboutMe.txt'}</Doc></Line>
+      <Line><Cmt>{' * '}</Cmt><Tag>@author</Tag><Doc>{' Harshit Rajput'}</Doc></Line>
+      <Line><Cmt>{' * '}</Cmt><Tag>@role</Tag><Doc>{'   Full-Stack Developer · Bhopal, India'}</Doc></Line>
+      <Line><Cmt>{' * '}</Cmt><Tag>@status</Tag><Doc>{' Open to opportunities'}</Doc></Line>
+      <Line><Cmt>{' */'}</Cmt></Line>
+      <Line />
+      <Line><Cmt>// Hi, I'm Harshit — a Full-Stack Developer in Bhopal, MP.</Cmt></Line>
+      <Line><Cmt>// I build Node.js + Express APIs that hold up under traffic,</Cmt></Line>
+      <Line><Cmt>// and ship React / Next.js modules that don't break the design</Cmt></Line>
+      <Line><Cmt>// system. ~2 years of production experience, MERN-first.</Cmt></Line>
+      <Line />
+      <Line><Cmt>// The short version: B.E. in Computer Science from SIRTS College</Cmt></Line>
+      <Line><Cmt>// (2016–2020). MERN training at FunctionUp in 2023. Then</Cmt></Line>
+      <Line><Cmt>// Associate Developer at Meslogic IT Solution from Jul 2024 to</Cmt></Line>
+      <Line><Cmt>// Apr 2026 — owning backend services in a real production team.</Cmt></Line>
+      <Line />
+      <Line><Cmt>// What I actually shipped:</Cmt></Line>
+      <Line><Cmt>//   · Added Redis caching to hot endpoints — cut average</Cmt></Line>
+      <Line><Cmt>//     response time by <b>~40%</b>.</Cmt></Line>
+      <Line><Cmt>//   · Designed MongoDB schemas + indexes that kept query times</Cmt></Line>
+      <Line><Cmt>//     flat as datasets grew.</Cmt></Line>
+      <Line><Cmt>//   · Built JWT auth with role-based access for APIs other</Cmt></Line>
+      <Line><Cmt>//     teams now depend on.</Cmt></Line>
+      <Line><Cmt>//   · Contributed React.js and Next.js modules with reusable</Cmt></Line>
+      <Line><Cmt>//     components, agile sprints and honest code reviews.</Cmt></Line>
+      <Line />
+      <Line><Cmt>// Strongest on the backend (APIs, schema design, caching, auth),</Cmt></Line>
+      <Line><Cmt>// equally happy in React / Next.js. Comfortable in TypeScript.</Cmt></Line>
+      <Line><Cmt>// Currently sharpening DSA and system-design fundamentals.</Cmt></Line>
+      <Line />
+      <Line><Cmt>// What I'm looking for: a small team that ships, trusts me to</Cmt></Line>
+      <Line><Cmt>// own work end-to-end, and gives me real problems. Bonus points</Cmt></Line>
+      <Line><Cmt>// for performance engineering, TypeScript-first codebases, or</Cmt></Line>
+      <Line><Cmt>// anything with real users on the line.</Cmt></Line>
+      <Line />
+      <Line><Cmt>// Away from the keyboard: music production, singing, football,</Cmt></Line>
+      <Line><Cmt>// volleyball, badminton. Same instincts — timing, attention to</Cmt></Line>
+      <Line><Cmt>// detail, showing up.</Cmt></Line>
+      <Line />
+      <Line><Cmt>// Want to talk? Hit </Cmt><Cmt>`</Cmt><Doc>Ctrl+J</Doc><Cmt>`</Cmt><Cmt> and run </Cmt><Cmt>`</Cmt><Doc>touch feedback.txt</Doc><Cmt>`</Cmt><Cmt> —</Cmt></Line>
+      <Line><Cmt>// type a note, hit Send, it lands in my inbox.</Cmt></Line>
+    </CodeBlock>
   )
 }
 

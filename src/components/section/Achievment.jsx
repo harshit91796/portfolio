@@ -1,321 +1,218 @@
-import React, { useEffect, useRef, useState } from 'react';
-import '../../App.css';
-import Tilt from 'react-vanilla-tilt';
-import {css,js,f,node,react,vac,mon,my,i,socket,book} from '../../assets/index'
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import React, { useState } from 'react'
+import Tilt from 'react-vanilla-tilt'
+import { CodeBlock, Line } from '../CodeBlock'
+import { book, socket, vac } from '../../assets/index'
 
+const K = ({ children }) => <span className="tok-kw">{children}</span>
+const V = ({ children }) => <span className="tok-var">{children}</span>
+const P = ({ children }) => <span className="tok-prop">{children}</span>
+const S = ({ children }) => <span className="tok-str">{`'${children}'`}</span>
+const C = ({ children }) => <span className="tok-cmt">{children}</span>
+const Doc = ({ children }) => <span className="tok-doc">{children}</span>
+const Tag = ({ children }) => <span className="tok-tag">{children}</span>
+const Op = ({ children }) => <span className="tok-op">{children}</span>
 
-function Achievement() {
-  const [isHovered, setIsHovered] = useState(false);
-  const arr = [react,node,mon,socket,js,css]
-  const arr2 = [react,node,mon,js,css]
-  
-  const introImgRefs = Array.from({ length: 6 }, () => useRef());
+const list = (items) =>
+  items.flatMap((item, i) => [
+    <S key={`s${i}`}>{item}</S>,
+    i < items.length - 1 ? <Op key={`,${i}`}>{', '}</Op> : null,
+  ])
 
-  useEffect(() => {
-    introImgRefs.forEach((ref, index) => {
-      gsap.fromTo(
-        ref.current,
-        {
-          filter: 'blur(10px)',
-          x: '100%',
-        },
-        {
-          duration: 3.5,
-          ease: 'circ.out',
-          x: 0,
-          filter: 'blur(0px)',
-          scrollTrigger: {
-            trigger: ref.current,
-            scrub: 1,
-            start: 'top 80%',
-            end: 'center center',
-            // stagger: 2.5,
-          },
-        }
-      );
-    });
-  }, [introImgRefs]);
+const PROJECTS = [
+  {
+    slug: '26 Letters ',
+    title: ' 26 Letters ',
+    blurb: 'Photographer\'s portfolio website',
+    link: 'https://github.com/harshit91796/portfolia',  
+    cmd: 'npm go to 26Letters',
+    stack: ['React', "TypeScript","Tailwind CSS"],
+    notes: [
+      'A single-page interactive portfolio for a photography studio ', 
+      ' featuring a cinematic loading sequence',
+      ,'scroll-choreographed section transitions, and image-driven storytelling.',
+      'CSS Modules for scoped, maintainable styles',
+      'Features interactive project cards and smooth animations',
+    ],
+    media: { type: 'iframe', src: 'https://youtube.com/embed/RQ9L3n9df8g?autoplay=1&mute=1&loop=1&playlist=RQ9L3n9df8g&controls=0' },
+  },
+  {
+    slug: 'shayraana',
+    title: 'Shayraana',
+    blurb: 'Social media app',
+    link: 'https://github.com/harshit91796/shayrana_SocialMedia_app',
+    cmd: 'npm go to shayraana',
+    stack: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Multer', 'socket.io', 'Material-UI'],
+    notes: [
+      'Full MERN stack with auth, posts, likes and comments',
+      'Image uploads handled via Multer',
+      'Responsive UI built with Material-UI',
+    ],
+    media: { type: 'video', src: 'https://bci-images.s3.ap-south-1.amazonaws.com/team/1702813960885_social.mp4' },
+  },
+  {
+    slug: 'transcript',
+    title: 'Video → Transcript',
+    blurb: 'YouTube video to text converter',
+    link: 'https://github.com/harshit91796/Video_to_transcripy',
+    cmd: 'npm go to transcript',
+    stack: ['React', 'Node.js', 'MongoDB', 'YouTube API'],
+    notes: [
+      'Paste a YouTube URL, get the transcript back as text',
+      'Built to streamline note-taking from technical videos',
+    ],
+    media: { type: 'video', src: '/trans.mp4' },
+  },
+  {
+    slug: 'vaccine',
+    title: 'Vaccine Slot Booking',
+    blurb: 'Backend for vaccine appointment booking',
+    link: 'https://github.com/harshit91796/vaccine_slot_booking',
+    cmd: 'npm go to vaccine',
+    stack: ['Node.js', 'Express.js', 'MongoDB', 'JWT'],
+    notes: [
+      'REST API for citizen registration and slot booking',
+      'Role-based access for admins and users',
+      'Schema-level validation and rate limiting',
+    ],
+    media: { type: 'image', src: vac },
+  },
+  {
+    slug: 'bookish',
+    title: 'Bookish',
+    blurb: 'Books management REST API',
+    link: 'https://github.com/harshit91796/Book_Management',
+    cmd: 'npm go to bookish',
+    stack: ['Node.js', 'Express.js', 'MongoDB', 'JWT'],
+    notes: [
+      'CRUD APIs for books, authors and reviews',
+      'JWT-based authorization with role guards',
+      'Strong validation and consistent error handling',
+    ],
+    media: { type: 'image', src: book },
+  },
+  {
+    slug: 'tuffy',
+    title: 'Tuffy the Courageous Dog',
+    blurb: 'Browser canvas game',
+    link: 'https://harshit91796.github.io/tuffy-game/',
+    cmd: 'npm go to tuffy',
+    stack: ['JavaScript', 'Canvas API'],
+    notes: [
+      'A canvas-based action game built from scratch',
+      'Tuffy fights bad guys to save his owner',
+    ],
+    media: { type: 'iframe', src: 'https://www.youtube.com/embed/ZU5sKUzQDFc?autoplay=1&mute=1&loop=1&playlist=ZU5sKUzQDFc&controls=0' },
+  },
+  {
+    slug: 'shoppingApp',
+    title: 'Product Management',
+    blurb: 'E-commerce backend',
+    link: 'https://github.com/harshit91796/shoping_app',
+    cmd: 'npm go to shoppingApp',
+    stack: ['Node.js', 'Express.js', 'MongoDB'],
+    notes: [
+      'Catalog, cart and order REST APIs',
+      'Authentication and role-based product management',
+      'Pagination, filtering and search across products',
+    ],
+    media: { type: 'image', src: '/product.jpg' },
+  },
+]
 
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  return (
-    <div className="p1">
-      <div className="projectContainer">
-        <h1>//Shayraana (Social media app) <h6 style={{color : 'grey'}}>(run : npm go to shayraana)</h6></h1>
-        <Tilt
-          className="tilt"
-          style={{ background: "transparent" }}
-          options={{ scale: 4, max: 55 }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
-            {isHovered ? (
-              <video
-                autoPlay
-                loop
-                muted
-                src={'https://bci-images.s3.ap-south-1.amazonaws.com/team/1702813960885_social.mp4'}
-                width={500}
-              />
-            ) : (
-              <div className="projectThumbnail">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  src={"https://bci-images.s3.ap-south-1.amazonaws.com/team/1702813960885_social.mp4"}
-                  width={500}
-                />
-              </div>
-            )}
-          </div>
-        </Tilt>
-        <div className="skillImg">
-        {arr.map((tag, index) => (
-          <div className="skill" ref={introImgRefs[index]} key={index}>
-            <img src={tag} alt="" />
-          </div>
-        ))}
-        
-        </div>
-        <h2>
-          Developed a full-stack social media platform using MERN (MongoDB,
-          Express.js, React.js, Node.js) stack. Implemented user authentication,
-          post creation, liking, and commenting functionalities. Integrated
-          image uploading with Multer for user posts. Utilized Axios for
-          handling API requests between the frontend and backend. Designed a
-          responsive and engaging user interface with Material-UI components.
-          Implemented features such as user profiles, timeline feed, and
-          real-time updates. Deployed the application to a cloud platform for
-          seamless accessibility.
-        </h2>
-      </div>
-      <div className="projectContainer">
-        <h1>//Video to Transcript Converter 🎥✨ <h6 style={{color : 'grey'}}>(run : npm go to typescript)</h6></h1>
-        <Tilt
-          className="tilt"
-          style={{ background: "transparent" }}
-          options={{ scale: 4, max: 55 }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
-            {isHovered ? (
-              <video
-                autoPlay
-                loop
-                muted
-                src={"../../../public/trans.mp4"}
-                width={500}
-              />
-            ) : (
-              <div className="projectThumbnail">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  src={"../../../public/trans.mp4"}
-                  width={500}
-                />
-              </div>
-            )}
-          </div>
-        </Tilt>
-        <div className="skillImg">
-        {arr2.map((tag, index) => (
-          <div className="skill" ref={introImgRefs[index]} key={index}>
-            <img src={tag} alt="" />
-          </div>
-        ))}
-        </div>
-        <h2>
-          The "Video to Transcript Converter" is a personal project that I
-          developed to streamline the process of transcribing YouTube videos
-          into written text. As a tech enthusiast, I recognized the need for a
-          user-friendly tool that simplifies the transcription workflow.
-        </h2>
-      </div>
-      <div className="projectContainer">
-        <h1>//Vaccine-dose <h6 style={{color : 'grey'}}>(run : npm go to vaccine)</h6></h1>
-        <Tilt
-          className="tilt"
-          style={{ background: "transparent" }}
-          options={{ scale: 4, max: 55 }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
-            <img
-              style={{ objectFit: "fill", width: "100%", height: "300px" }}
-              src={vac}
-              alt=""
-            />
-          </div>
-        </Tilt>
-      <div className="skillImg">
-      <div className="skill">
-      <img src={node} alt="" />
-    </div>
-    <div className="skill">
-      <img src={mon} alt="" />
-    </div>
-    <div className="skill">
-            <img
-              src={js}
-              alt=""
-            />
-          </div>
-      
-      </div>
-        <h2>
-          Developed a full-stack social media platform using MERN (MongoDB,
-          Express.js, React.js, Node.js) stack. Implemented user authentication,
-          post creation, liking, and commenting functionalities. Integrated
-          image uploading with Multer for user posts. Utilized Axios for
-          handling API requests between the frontend and backend. Designed a
-          responsive and engaging user interface with Material-UI components.
-          Implemented features such as user profiles, timeline feed, and
-          real-time updates. Deployed the application to a cloud platform for
-          seamless accessibility.
-        </h2>
-      </div>
-      <div className="projectContainer">
-        <h1>//Bookish <h6 style={{color : 'grey'}}>(run : npm go to bookish)</h6></h1>
-        <Tilt
-          className="tilt"
-          style={{ background: "transparent" }}
-          options={{ scale: 4, max: 55 }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
-            <img
-              style={{ objectFit: "fill", width: "100%", height: "400px" }}
-              src={book}
-              alt=""
-            />
-          </div>
-        </Tilt>
-      <div className="skillImg">
-      <div className="skill">
-      <img src={node} alt="" />
-    </div>
-    <div className="skill">
-      <img src={js} alt="" />
-    </div>
-    <div className="skill">
-            <img
-              src={mon}
-              alt=""
-            />
-          </div>
-      
-      </div>
-        <h2>
-        Developed a Books Management system using Node.js and
-        MongoDB for Technetium project.
-        Implemented RESTful APIs for user authentication, book
-        management, and reviews.
-        Ensured data integrity, error handling, and security using JWT
-        tokens for authorization.
-        </h2>
-      </div>
-      <div className="projectContainer">
-        <h1>//Tuffy the courageous dog <h6 style={{color : 'grey'}}>(run : npm go to tuffy)</h6></h1>
-        <Tilt
-          className="tilt"
-          style={{ background: "transparent" }}
-          options={{ scale: 4, max: 55 }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
-          {isHovered ? (
-            <video
-              autoPlay
-              loop
-              muted
-              src='public\Tuffy - Google Chrome 2023-01-14 20-37-56.mp4'
-              width={500}
-            />
-          ) : (
-            <div className="projectThumbnail">
-              <video
-                autoPlay
-                loop
-                muted
-                src='public\Tuffy - Google Chrome 2023-01-14 20-37-56.mp4'
-                width={500}
-              />
-            </div>
-          )}
-          </div>
-        </Tilt>
-      <div className="skillImg">
-    <div className="skill">
-      <img src={js} alt="" />
-    </div>    
-      </div>
-        <h2>
-          A game clone in which a dog(tuffy) try to kick some as**** to save his owner from evil.Purly made on Javascript canvas.
-        </h2>
-      </div>
-      <div className="projectContainer">
-      <h1>//Product-management(backend) <h6 style={{color : 'grey'}}>(run : npm go to shoppingApp)</h6></h1>
-      <Tilt
-        className="tilt"
-        style={{ background: "transparent" }}
-        options={{ scale: 4, max: 55 }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className={`projectContainerCard ${isHovered ? "glow" : ""}`}>
-          <img
-            style={{ objectFit: "fill", width: "100%", height: "300px" }}
-            src="product.jpg"
-            alt=""
-          />
-        </div>
-      </Tilt>
-    <div className="skillImg">
-    <div className="skill">
-    <img src={node} alt="" />
-  </div>
-  <div className="skill">
-    <img src={js} alt="" />
-  </div>
-  <div className="skill">
-          <img
-            src={mon}
-            alt=""
-          />
-        </div>
-    
-    </div>
-      <h2>
-        Developed a full-stack social media platform using MERN (MongoDB,
-        Express.js, React.js, Node.js) stack. Implemented user authentication,
-        post creation, liking, and commenting functionalities. Integrated
-        image uploading with Multer for user posts. Utilized Axios for
-        handling API requests between the frontend and backend. Designed a
-        responsive and engaging user interface with Material-UI components.
-        Implemented features such as user profiles, timeline feed, and
-        real-time updates. Deployed the application to a cloud platform for
-        seamless accessibility.
-      </h2>
-    </div>
-    </div>
-  );
+const ProjectMedia = ({ media, title }) => {
+  if (media.type === 'video') {
+    return (
+      <video
+        className="projectMedia"
+        src={media.src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-label={`${title} preview`}
+      />
+    )
+  }
+  if (media.type === 'iframe') {
+    return (
+      <iframe
+        className="projectMedia"
+        src={media.src}
+        title={`${title} preview`}
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+    )
+  }
+  return <img className="projectMedia" src={media.src} alt={`${title} preview`} />
 }
 
-export default Achievement;
+const ProjectCard = ({ project, index }) => {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <article
+      className="projectCard"
+      style={{ animationDelay: `${index * 80}ms` }}
+    >
+      <CodeBlock filename={`projects/${project.slug}.ts`}>
+        <Line><C>/**</C></Line>
+        <Line><C>{' * '}</C><Doc>{project.title}</Doc><C>{' — '}</C><Doc>{project.blurb}</Doc></Line>
+        <Line><C>{' * '}</C><Tag>@link</Tag><Doc>{` ${project.link}`}</Doc></Line>
+        <Line><C>{' * '}</C><Tag>@run</Tag><C>{`  `}</C><Doc>{project.cmd}</Doc></Line>
+        <Line><C>{' */'}</C></Line>
+        <Line />
+        <Line><K>const</K> <V>{project.slug}</V> <Op>=</Op> {'{'}</Line>
+        <Line indent={1}><P>stack</P><Op>: [</Op>{list(project.stack)}<Op>],</Op></Line>
+        <Line indent={1}><P>notes</P><Op>: [</Op></Line>
+        {project.notes.map((note, i) => (
+          <Line key={i} indent={2}>
+            <S>{note}</S>
+            <Op>,</Op>
+          </Line>
+        ))}
+        <Line indent={1}><Op>],</Op></Line>
+        <Line>{'}'}<Op>;</Op></Line>
+      </CodeBlock>
+
+      <a
+        className="projectMediaWrap"
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        aria-label={`Open ${project.title}`}
+      >
+        <Tilt
+          className="projectTilt"
+          options={{ scale: 1.02, max: 12, glare: true, 'max-glare': 0.25 }}
+        >
+          <div className={`projectMediaFrame${hovered ? ' is-hovered' : ''}`}>
+            <ProjectMedia media={project.media} title={project.title} />
+          </div>
+        </Tilt>
+      </a>
+    </article>
+  )
+}
+
+function Achievement() {
+  return (
+    <div className="projectsView">
+      <div className="projectsView__intro">
+        <CodeBlock filename="projects/index.ts" language="typescript">
+          <Line><C>// Selected projects. Each one lives in its own file below.</C></Line>
+          <Line><C>// Type `</C><Doc>help</Doc><C>` or `</C><Doc>ls</Doc><C>` in the terminal (Ctrl+J) to navigate.</C></Line>
+          <Line><C>// Click any preview to open the repo or demo.</C></Line>
+        </CodeBlock>
+      </div>
+      {PROJECTS.map((p, i) => (
+        <ProjectCard key={p.slug} project={p} index={i} />
+      ))}
+    </div>
+  )
+}
+
+export default Achievement
