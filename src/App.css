@@ -1690,11 +1690,16 @@ button.vsStatusBar__item:hover {
   .fileEditor__textarea { padding: 12px 14px; font-size: 13px; }
   .fileEditor__hint { padding: 8px 12px; font-size: 11.5px; }
 
-  /* Code-file presentation — shrink the gutter */
+  /* Code-file presentation — shrink the gutter and let lines wrap */
   .codeBlock__line { padding-left: 52px; }
   .codeBlock__line::before { width: 40px; padding-right: 10px; }
   .codeBlock { font-size: 13px; }
   .codeBlock__breadcrumb { padding: 0 12px; }
+  .codeBlock__code { min-width: 0; }
+  .codeBlock__line {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
 }
 
 @keyframes vsBackdropIn {

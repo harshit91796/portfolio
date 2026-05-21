@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
 import Explorer from './Explorer'
 import MiddleNav from './MiddleNav'
@@ -6,9 +7,10 @@ import MiddleTerminal from './MiddleTerminal'
 import MiddleBox from './MiddleBox'
 
 function MiddleBlock({ field }) {
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
   const [terminalOpen, setTerminalOpen] = useState(false)
   const [explorerOpen, setExplorerOpen] = useState(false)
-  const isHome = field?.type?.name === 'Home' || field?.type?.displayName === 'Home'
 
   useEffect(() => {
     const handleKeyPress = (event) => {
