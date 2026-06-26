@@ -20,6 +20,24 @@ const list = (items) =>
 
 const PROJECTS = [
   {
+    slug: 'unseenPrice',
+    title: 'Unseen Price',
+    blurb: 'Hyperlocal Indian marketplace platform',
+    link: 'https://www.unseenprice.com',
+    cmd: 'npm go to unseenPrice',
+    stack: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'Supabase'],
+    notes: [
+      'Built the entire frontend and backend end-to-end',
+      'Radius-based geospatial search with MongoDB $centerSphere and 2dsphere indexes',
+      'Razorpay subscriptions across 4 plan tiers with signature-verified webhooks',
+      'Self-serve native ad platform with fair Fisher-Yates rotation and frequency capping',
+      'Direct client-to-Supabase image uploads with client-side compression',
+      'JWT auth with refresh rotation, Google OAuth and email verification gating',
+      'Sparse product variant system with MRP pricing and a moderation pipeline',
+    ],
+    media: { type: 'image', src: '/unseenprice.png' },
+  },
+  {
     slug: '26 Letters ',
     title: ' 26 Letters ',
     blurb: 'Photographer\'s portfolio website',

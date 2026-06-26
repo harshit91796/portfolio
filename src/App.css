@@ -783,6 +783,17 @@ button.vsStatusBar__item:hover {
   flex: none;
 }
 
+/* Wrap long lines inside the card's own column so they never
+   overflow onto the image sitting in the adjacent grid cell. */
+.projectCard .codeBlock__code {
+  min-width: 0;
+}
+
+.projectCard .codeBlock__line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .projectMediaWrap {
   display: block;
   text-decoration: none;
